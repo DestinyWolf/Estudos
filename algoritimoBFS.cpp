@@ -104,10 +104,11 @@ list<int> BFS(int start, int end, vector<list<int>> graph, int v){
     {
         start = q.front();
         q.pop();
+        list<int> aux(graph[start].size());
+        aux = graph[start];
 
-        for(int i=0; i<graph[start].size(); i++){
-            if (graph[start] == end)
-            {
+        for(auto i: aux){
+            if(i == end){
                 for (auto elements: past)
                 {
                     if (past[elements] != -2)
